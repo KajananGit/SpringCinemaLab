@@ -33,8 +33,8 @@ public class MovieService {
         movieRepository.save(movie);
     }
 
-    public void deleteMovie(Movie movie){
-        movieRepository.delete(movie);
+    public void deleteMovie(long id){
+        movieRepository.deleteById(id);
     }
 
 
