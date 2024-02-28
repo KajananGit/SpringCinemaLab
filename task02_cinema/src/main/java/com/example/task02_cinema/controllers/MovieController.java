@@ -37,13 +37,11 @@ public class MovieController {
         return new ResponseEntity<>(movie, HttpStatus.CREATED);
     }
 
-//    @PatchMapping(value = "/{id}")
-//    public ResponseEntity<Movie> updateMovie(@PathVariable long id, @RequestBody String title){
-//        movieService.updateMovie(id, title);
-//        Optional<Movie> optionalMovie = movieService.getMovieById(id);
-//        Movie movie = optionalMovie.get();
-//        return new ResponseEntity<>(movie, HttpStatus.OK);
-//    }
+    @PatchMapping(value = "/{id}")
+    public ResponseEntity<Movie> updateMovie(@PathVariable long id, @RequestBody Movie movie){
+        movieService.updateMovie(id, movie);
+        return new ResponseEntity<>(movie, HttpStatus.OK);
+    }
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Movie> deleteMovie(@PathVariable long id){

@@ -28,11 +28,10 @@ public class MovieService {
         return movieRepository.findById(id);
     }
 
-//    public void updateMovie(long id, String title){
-//       Optional<Movie> optionalMovie = movieRepository.findById(id);
-//       Movie movie = optionalMovie.get();
-//       movie.setTitle(title);
-//    }
+    public void updateMovie(long id, Movie movie){
+        movie.setId(id);
+        movieRepository.save(movie);
+    }
 
     public void deleteMovie(Movie movie){
         movieRepository.delete(movie);
